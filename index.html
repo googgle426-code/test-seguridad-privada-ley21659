@@ -340,12 +340,12 @@ footer{
 <section>
   <h2>Visitas al sitio</h2>
   <p style="text-align:center; font-size:18px;">
-    👀 Visitas: <span id="contador">Cargando...</span>
+    👀 Visitas: <span id="contador">0</span>
   </p>
 </section>
 
 <script>
-fetch("https://api.countapi.xyz/hit/googgle426-code/test-seguridad-privada-ley21659")
+fetch("https://api.countapi.xyz/hit/googgle426-code-test-seguridad-privada-ley21659/visitas")
   .then(res => res.json())
   .then(data => {
     document.getElementById("contador").innerText = data.value;
@@ -354,21 +354,6 @@ fetch("https://api.countapi.xyz/hit/googgle426-code/test-seguridad-privada-ley21
     document.getElementById("contador").innerText = "No disponible";
   });
 </script>
-
-
-
-<script>
-fetch('https://api.countapi.xyz/hit/test-seguridad-privada-ley21659/visitas')
-  .then(response => response.json())
-  .then(data => {
-    document.getElementById('visitas').innerText = data.value;
-  })
-  .catch(() => {
-    document.getElementById('visitas').innerText = 'No disponible';
-  });
-</script>
-
-
 
 <footer style="text-align:center; padding:20px; font-size:14px; color:#888;">
   <p>
