@@ -347,20 +347,18 @@ footer{
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  fetch("https://api.countapi.xyz/hit/felix-security-21659/visitas")
-    .then(response => response.json())
-    .then(data => {
-      document.getElementById("contador").textContent = data.value;
-    })
-    .catch(err => {
-      console.error(err);
-      document.getElementById("contador").textContent = "Error";
-    });
+  let visitas = localStorage.getItem("visitas_felix_security");
+
+  if (!visitas) {
+    visitas = 1;
+  } else {
+    visitas = parseInt(visitas) + 1;
+  }
+
+  localStorage.setItem("visitas_felix_security", visitas);
+  document.getElementById("contador").textContent = visitas;
 });
 </script>
-
-
-
 
 
 <footer style="text-align:center; padding:20px; font-size:14px; color:#888;">
